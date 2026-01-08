@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyanix AI - Legal Documentation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --cyan-neon: #00f3ff;
+            --cyan-dark: #00a8b5;
+            --cyan-bright: #6bffff;
+            --purple-deep: #1a0633;
+            --purple-dark: #0d0221;
+            --purple-light: #2d1b69;
+            --neon-glow: 0 0 10px var(--cyan-neon), 0 0 20px var(--cyan-neon);
+            --text-glow: 0 0 8px rgba(107, 255, 255, 0.7);
+            --card-bg: rgba(13, 2, 33, 0.9);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+            background: var(--purple-dark);
+            color: #f0f0f0;
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 5s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 1; }
+        }
+
+        .scanline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--cyan-neon), transparent);
+            opacity: 0.3;
+            animation: scan 4s linear infinite;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        @keyframes scan {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(100vh); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 0 40px;
+            position: relative;
+        }
+
+        .logo {
+            font-size: 48px;
+            color: var(--cyan-neon);
+            margin-bottom: 20px;
+            text-shadow: var(--neon-glow);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        h1 {
+            font-size: 48px;
+            background: linear-gradient(135deg, var(--cyan-neon), var(--cyan-bright));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            text-shadow: var(--text-glow);
+        }
+
+        .subtitle {
+            font-size: 20px;
+            color: var(--cyan-bright);
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+
+        .legal-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 2px solid var(--cyan-dark);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            border-color: var(--cyan-neon);
+            transform: translateY(-10px);
+            box-shadow: var(--neon-glow);
+        }
+
+        .card-icon {
+            font-size: 60px;
+            color: var(--cyan-neon);
+            margin-bottom: 25px;
+            text-shadow: 0 0 20px var(--cyan-neon);
+        }
+
+        .card h2 {
+            font-size: 28px;
+            color: var(--cyan-neon);
+            margin-bottom: 20px;
+        }
+
+        .card p {
+            color: var(--cyan-bright);
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, var(--cyan-dark), var(--cyan-bright));
+            color: var(--purple-dark);
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 18px;
+            border: 2px solid var(--cyan-neon);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, var(--cyan-bright), var(--cyan-neon));
+            transform: translateY(-3px);
+            box-shadow: 0 0 20px var(--cyan-neon);
+        }
+
+        .features {
+            background: rgba(13, 2, 33, 0.7);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 60px;
+            border: 1px solid var(--cyan-dark);
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 32px;
+            color: var(--cyan-neon);
+            margin-bottom: 40px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 25px;
+            background: rgba(0, 168, 181, 0.1);
+            border-radius: 15px;
+            border: 1px solid var(--cyan-dark);
+        }
+
+        .feature i {
+            font-size: 36px;
+            color: var(--cyan-neon);
+            margin-bottom: 15px;
+        }
+
+        .feature h3 {
+            color: var(--cyan-bright);
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .feature p {
+            color: #b3e0ff;
+            font-size: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid var(--cyan-dark);
+            margin-top: 40px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--cyan-bright);
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--cyan-neon);
+            text-shadow: 0 0 10px var(--cyan-neon);
+        }
+
+        .copyright {
+            color: var(--cyan-dark);
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+        .github-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--cyan-dark);
+            border-radius: 10px;
+            padding: 12px 25px;
+            color: var(--cyan-bright);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s;
+            margin-top: 20px;
+        }
+
+        .github-btn:hover {
+            background: rgba(0, 168, 181, 0.2);
+            border-color: var(--cyan-neon);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 36px; }
+            .subtitle { font-size: 18px; }
+            .legal-cards { grid-template-columns: 1fr; }
+            .features-grid { grid-template-columns: 1fr; }
+            .container { padding: 15px; }
+        }
+
+        .last-updated {
+            text-align: center;
+            color: var(--cyan-bright);
+            font-size: 14px;
+            margin-top: 20px;
+            opacity: 0.8;
+        }
+
+        .version {
+            background: rgba(0, 168, 181, 0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: var(--cyan-neon);
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Star Background -->
+    <div class="stars" id="stars"></div>
+    
+    <!-- Scanline Effect -->
+    <div class="scanline"></div>
+
+    <div class="container">
+        <header>
+            <div class="logo">🤖</div>
+            <h1>Cyanix AI Legal Hub</h1>
+            <p class="subtitle">Transparent, Privacy-Focused AI Assistant for Discord</p>
+            <div class="last-updated">
+                <span class="version">v2.0</span> • Last Updated: December 2024
+            </div>
+        </header>
+
+        <main>
+            <div class="legal-cards">
+                <div class="card">
+                    <div class="card-icon">📜</div>
+                    <h2>Terms of Service</h2>
+                    <p>Understand the rules and guidelines for using Cyanix AI. Our commitment to transparency and user rights in the AI space.</p>
+                    <a href="tos.html" class="btn">Read Terms of Service</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">🔒</div>
+                    <h2>Privacy Policy</h2>
+                    <p>Learn how we handle your data (spoiler: we don't store any). Our privacy-first approach explained in detail.</p>
+                    <a href="privacy.html" class="btn">Read Privacy Policy</a>
+                </div>
+            </div>
+
+            <div class="features">
+                <h2>Our Privacy Commitments</h2>
+                <div class="features-grid">
+                    <div class="feature">
+                        <i class="fas fa-ban"></i>
+                        <h3>No Data Storage</h3>
+                        <p>We don't store messages, user data, or conversation history.</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-code"></i>
+                        <h3>Open Source</h3>
+                        <p>Complete transparency through open-source code review.</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-server"></i>
+                        <h3>Self-Hostable</h3>
+                        <p>Run your own instance with full control over your data.</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>GDPR Compliant</h3>
+                        <p>Designed with privacy regulations in mind from the start.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="https://github.com/yourusername/cyanix-ai-bot" class="github-btn" target="_blank">
+                    <i class="fab fa-github"></i> View Source Code on GitHub
+                </a>
+                <p style="margin-top: 15px; color: var(--cyan-bright); opacity: 0.8;">
+                    Want to contribute? Check out our GitHub repository for the complete source code.
+                </p>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-links">
+                <a href="tos.html">Terms of Service</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="https://github.com/yourusername/cyanix-ai-bot/blob/main/LICENSE" target="_blank">License</a>
+                <a href="https://github.com/yourusername/cyanix-ai-bot" target="_blank">GitHub</a>
+                <a href="https://discord.com/api/oauth2/authorize?client_id=YOUR_CLIENT_ID" target="_blank">Invite Bot</a>
+            </div>
+            <div class="copyright">
+                &copy; 2024 Cyanix AI. All rights reserved.<br>
+                Discord is a trademark of Discord Inc. This bot is not affiliated with Discord Inc.<br>
+                AI services provided by Groq and Anthropic.
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Create starry background
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            const starCount = 200;
+            
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                
+                // Random size
+                const size = Math.random() * 3 + 1;
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                
+                // Random position
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                
+                // Random animation
+                star.style.animationDelay = `${Math.random() * 5}s`;
+                star.style.animationDuration = `${Math.random() * 3 + 2}s`;
+                
+                starsContainer.appendChild(star);
+            }
+        }
+
+        // Update year in copyright
+        document.addEventListener('DOMContentLoaded', function() {
+            createStars();
+            document.querySelector('.copyright').innerHTML = 
+                document.querySelector('.copyright').innerHTML.replace('2024', new Date().getFullYear());
+        });
+    </script>
+</body>
+</html>
